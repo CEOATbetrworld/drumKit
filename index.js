@@ -28,11 +28,6 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
                     break;
 
                 case "j":
-                    var snare = new Audio("sounds/snare.mp3");
-                    snare.play();
-                    break;
-
-                case "k":
                     var crash = new Audio("sounds/crash.mp3");
                     crash.play();
                     break;
@@ -40,6 +35,11 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
                 case "l":
                     var kick = new Audio("sounds/kick-bass.mp3");
                     kick.play();
+                    break;
+
+                case "k":
+                    var snare = new Audio("sounds/snare.mp3");
+                    snare.play();
                     break;
 
                 default:
