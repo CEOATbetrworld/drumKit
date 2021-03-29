@@ -1,5 +1,4 @@
-
-function makeSound(key){
+function makeSound(key) {
     switch (key) {
         case "w":
             var tom1 = new Audio("sounds/tom-1.mp3");
@@ -37,7 +36,7 @@ function makeSound(key){
             break;
 
         default:
-            console.log(buttonInnerHTML);
+            console.log(key);
             break;
     }
 
@@ -49,13 +48,25 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
 
         var buttonInnerHTML = this.innerHTML;
         makeSound(buttonInnerHTML);
-        
+        buttonAnnimation(buttonInnerHTML);
     })
 }
 
 document.addEventListener("keydown", function (event) {
     var keyPressed = event.key;
     makeSound(keyPressed);
-
+    buttonAnnimation(keyPressed);
 })
 
+function buttonAnnimation(currentKey) {
+    console.log(activeButton);
+    var activeButton = document.querySelector("." + currentKey);
+    console.log(activeButton);
+    activeButton.classList.add("pressed");
+
+    setTimeout(function () {
+        activeButton.classList.remove("pressed")
+        console.log(activeButton);
+    },100)
+
+}
